@@ -1,0 +1,16 @@
+{
+  "name": "api-catalogo",
+  "version": "1.0.0",
+  "description": "API de catálogo de produtos",
+  "main": "src/app.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/app.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

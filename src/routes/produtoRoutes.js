@@ -1,0 +1,13 @@
+import { Router } from "express";
+import ProdutoController from "../controllers/ProdutoController.js";
+
+const router = Router();
+const controller = new ProdutoController();
+
+router.get("/", (req, res) => controller.listarTodos(req, res));
+router.get("/:id", (req, res) => controller.buscarPorId(req, res));
+router.post("/", (req, res) => controller.criar(req, res));
+router.put("/:id", (req, res) => controller.atualizar(req, res));
+router.delete("/:id", (req, res) => controller.deletar(req, res));
+
+export default router;

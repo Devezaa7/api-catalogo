@@ -6,7 +6,7 @@ const PORT = 3000;
 
 app.use(express.json());
 
-// Rota raiz
+
 app.get("/", (req, res) => {
   res.send("Bem-vindo à API do Catálogo!");
 });

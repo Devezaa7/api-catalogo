@@ -45,15 +45,17 @@ export default class ProdutoController {
     return res.json(produto);
   }
 
-  deletar(req, res) {
-    const id = parseInt(req.params.id);
-    const index = produtos.findIndex(p => p.id === id);
+deletar(req, res) {
+  const id = parseInt(req.params.id);
+  const index = produtos.findIndex(p => p.id === id);
 
-    if (index === -1) {
-      return res.status(404).json({ mensagem: "Produto não encontrado" });
-    }
-
-    produtos.splice(index, 1);
-    return res.status(204).send();
+  if (index === -1) {
+    return res.status(404).json({ mensagem: "Produto não encontrado." });
   }
+
+  const produtoRemovido = produtos.splice(index, 1)[0];
+  res.json({
+    mensagem: `Produto '${produtoRemovido.nome}' foi deletado com sucesso!`
+  });
+}
 }
